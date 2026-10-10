@@ -1,0 +1,15 @@
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\bin\Debug\net6.0\Partnecol.Core.exe
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\bin\Debug\net6.0\Partnecol.Core.deps.json
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\bin\Debug\net6.0\Partnecol.Core.runtimeconfig.json
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\bin\Debug\net6.0\Partnecol.Core.dll
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\bin\Debug\net6.0\Partnecol.Core.pdb
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.csproj.AssemblyReference.cache
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.AssemblyInfoInputs.cache
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.AssemblyInfo.cs
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.csproj.CoreCompileInputs.cache
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.dll
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\refint\Partnecol.Core.dll
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.pdb
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\Partnecol.Core.genruntimeconfig.cache
+C:\Users\vaneg\source\repos\PartnecolRamales\Partnecol.Core\obj\Debug\net6.0\ref\Partnecol.Core.dll
