@@ -165,4 +165,15 @@ public class ConsultaRamalesServiceTests
             _servicio.ConsultarReferencia("REF-999"));
     }
 
+    [Test]
+    public void ErrorDelRepositorioAlConsultarReferencia_SePropaga()
+    {
+        _repositorio
+            .Setup(r => r.BuscarReferencia("REF-001"))
+            .Throws(new InvalidOperationException("Error de acceso"));
+
+        Assert.Throws<InvalidOperationException>(() =>
+            _servicio.ConsultarReferencia("REF-001"));
+    }
+
 }

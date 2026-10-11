@@ -61,4 +61,25 @@ public class ConsultaRamalesService
 
         return referencia;
     }
+
+    public MarcacionConector ConsultarMarcacion(int numero)
+    {
+        if (numero <= 0)
+        {
+            throw new ArgumentException(
+                "El número de marcación debe ser mayor que cero.",
+                nameof(numero));
+        }
+
+        var marcacion = _repositorio.BuscarMarcacion(numero);
+
+        if (marcacion is null)
+        {
+            throw new KeyNotFoundException(
+                $"No existe una marcación registrada con el número {numero}.");
+        }
+
+        return marcacion;
+    }
+
 }

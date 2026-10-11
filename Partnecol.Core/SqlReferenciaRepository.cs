@@ -85,5 +85,33 @@ public class SqlReferenciaRepository : IReferenciaRepository
             ColorReemplazo = lector.GetString(2)
         };
     }
+
+    public MarcacionConector? BuscarMarcacion(int numero)
+    {
+        using var conexion = new SqlConnection(_cadenaConexion);
+        conexion.Open();
+
+        const string sql = @"
+        SELECT Numero, Funcion
+        FROM CatalogoMarcacion
+        WHERE Numero = @Numero;";
+
+        using var comando = new SqlCommand(sql, conexion);
+        comando.Parameters.AddWithValue("@Numero", numero);
+
+        using var reader = comando.ExecuteReader();
+
+        if (!reader.Read())
+        {
+            return null;
+        }
+
+        return new MarcacionConector
+        {
+            Numero = reader.GetInt32(reader.GetOrdinal("Numero")),
+            Funcion = reader.GetString(reader.GetOrdinal("Funcion"))
+        };
+    }
+
 }
 

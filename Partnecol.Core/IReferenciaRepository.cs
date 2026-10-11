@@ -12,4 +12,7 @@ public interface IReferenciaRepository
 
     EquivalenciaCable? BuscarEquivalencia(
         string idReferencia, string colorRequerido);
+
+    MarcacionConector? BuscarMarcacion(int numero);
+
 }

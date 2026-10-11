@@ -21,6 +21,7 @@ while (continuar)
     Console.WriteLine("==========================================");
     Console.WriteLine("1. Consultar equivalencia de cable");
     Console.WriteLine("2. Consultar datos de una referencia");
+    Console.WriteLine("3. Consultar marcación de conectores");
     Console.WriteLine("0. Salir");
     Console.WriteLine("------------------------------------------");
     Console.Write("Seleccione una opción: ");
@@ -37,6 +38,10 @@ while (continuar)
             ConsultarReferencia();
             break;
 
+        case "3":
+            ConsultarMarcacion();
+            break;
+
         case "0":
             continuar = false;
             Console.WriteLine("\nGracias por utilizar el sistema.");
@@ -44,7 +49,7 @@ while (continuar)
 
         default:
             Console.WriteLine(
-                "\nOpción inválida. Seleccione 1, 2 o 0.");
+                "\nOpción inválida. Seleccione 1, 2, 3 o 0.");
             Pausar();
             break;
     }
@@ -144,6 +149,48 @@ void ConsultarReferencia()
 
     Pausar();
 }
+
+void ConsultarMarcacion()
+{
+    Console.WriteLine("\n--- CONSULTAR MARCACIÓN DE CONECTORES ---");
+
+    string entrada = LeerDato("Número de marcación: ");
+
+    if (!int.TryParse(entrada, out int numero))
+    {
+        Console.WriteLine(
+            "\nEntrada inválida. Debe ingresar un número entero.");
+        Pausar();
+        return;
+    }
+
+    try
+    {
+        var resultado = servicio.ConsultarMarcacion(numero);
+
+        Console.WriteLine("\nMARCACIÓN ENCONTRADA");
+        Console.WriteLine($"Número: {resultado.Numero}");
+        Console.WriteLine($"Función: {resultado.Funcion}");
+    }
+    catch (ArgumentException ex)
+    {
+        Console.WriteLine($"\nDato inválido: {ex.Message}");
+    }
+    catch (KeyNotFoundException)
+    {
+        Console.WriteLine(
+            "\nEl número de marcación no está registrado en el catálogo.");
+    }
+    catch (Exception)
+    {
+        Console.WriteLine(
+            "\nNo fue posible consultar los datos. " +
+            "Verifique la conexión con la base de datos.");
+    }
+
+    Pausar();
+}
+
 
 string LeerDato(string mensaje)
 {
