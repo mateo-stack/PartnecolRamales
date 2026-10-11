@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partnecol.Core", "Partnecol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partnecol.Tests", "Partnecol.Tests\Partnecol.Tests.csproj", "{09916037-6810-4C8D-AF76-5D0D8DBE96A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partnecol.App", "Partnecol.App\Partnecol.App.csproj", "{DCD9FD80-1CFA-4216-948A-1A89CFBD792C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{09916037-6810-4C8D-AF76-5D0D8DBE96A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09916037-6810-4C8D-AF76-5D0D8DBE96A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09916037-6810-4C8D-AF76-5D0D8DBE96A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD9FD80-1CFA-4216-948A-1A89CFBD792C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD9FD80-1CFA-4216-948A-1A89CFBD792C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD9FD80-1CFA-4216-948A-1A89CFBD792C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD9FD80-1CFA-4216-948A-1A89CFBD792C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
