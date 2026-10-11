@@ -122,4 +122,47 @@ public class ConsultaRamalesServiceTests
         Assert.Throws<InvalidOperationException>(() =>
             _servicio.ConsultarEquivalencia("REF-001", "AZUL"));
     }
+
+    [Test]
+    public void ConsultarReferenciaExistente_RetornaDatos()
+    {
+        var referenciaEsperada = new ReferenciaRamal
+        {
+            IdReferencia = "REF-001",
+            Nombre = "Ramal de prueba"
+        };
+
+        _repositorio
+            .Setup(r => r.BuscarReferencia("REF-001"))
+            .Returns(referenciaEsperada);
+
+        var resultado = _servicio.ConsultarReferencia("REF-001");
+
+        Assert.That(resultado, Is.Not.Null);
+        Assert.That(resultado.IdReferencia, Is.EqualTo("REF-001"));
+        Assert.That(resultado.Nombre, Is.EqualTo("Ramal de prueba"));
+    }
+
+    [Test]
+    public void ConsultarReferenciaVacia_LanzaArgumentException()
+    {
+        Assert.Throws<ArgumentException>(() =>
+            _servicio.ConsultarReferencia(" "));
+
+        _repositorio.Verify(
+            r => r.BuscarReferencia(It.IsAny<string>()),
+            Times.Never);
+    }
+
+    [Test]
+    public void ConsultarReferenciaInexistente_LanzaKeyNotFoundException()
+    {
+        _repositorio
+            .Setup(r => r.BuscarReferencia("REF-999"))
+            .Returns((ReferenciaRamal?)null);
+
+        Assert.Throws<KeyNotFoundException>(() =>
+            _servicio.ConsultarReferencia("REF-999"));
+    }
+
 }

@@ -45,4 +45,20 @@ public class ConsultaRamalesService
         return ResultadoEquivalencia.ConEquivalencia(
             equivalencia.ColorReemplazo);
     }
+    public ReferenciaRamal ConsultarReferencia(string idReferencia)
+    {
+        if (string.IsNullOrWhiteSpace(idReferencia))
+            throw new ArgumentException(
+                "La referencia es obligatoria.", nameof(idReferencia));
+
+        string id = idReferencia.Trim();
+
+        var referencia = _repositorio.BuscarReferencia(id);
+
+        if (referencia is null)
+            throw new KeyNotFoundException(
+                $"No existe la referencia {id}.");
+
+        return referencia;
+    }
 }
